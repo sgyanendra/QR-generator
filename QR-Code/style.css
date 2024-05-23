@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0; 
+ }
+  body{
+    background-color: #222;
+  } 
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(150, 145, 145);
+    border-radius: 5px;
+    width:40vw;
+    padding: 10px;
+    margin-top: 25vh;
+    margin-left:32vw;
+    background-color: rgb(61, 60, 59);
+  }
+   .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 21px;
+    color: aliceblue;
+    padding: 5px;
+   }
+   #input{
+    height: 6vh;
+    width: 30vw;
+    margin-top: 15px;
+    border-radius: 4px;
+    border:none;
+   }
+   .bt{
+     padding-top: 1vh;
+     padding-bottom: 10px;
+     color: antiquewhite;
+   }
+   button{
+    height: 5vh;
+    width: 15vw;
+    border-radius: 5px;
+    font-size: 12px; 
+    cursor: pointer;
+}
+    #qrcode{
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;   
+    }
+    .down{
+      margin-top: 5px;   
+      width:10vw;
+      height: 5vh;
+    }
+@media (max-width:600px) {
+    .container{
+        width:65vw;
+        padding: 10px;
+        margin-top: 28vh;
+        margin-left:15vw;
+        border-radius: 10px;
+     }
+     .user{
+        margin-top: 10px;
+        font-size: 25px;
+       }    
+     #input{
+        height: 4vh;
+        width: 50vw;
+        margin-top: 20px;
+        border-radius: 5px;
+        border:2px solid rgb(167, 156, 156);
+      }        
+      button{
+        height: 4vh;
+        width: 25vw;
+        border-radius: 8px;
+     }
+     .down{
+        margin-top: 2px;   
+        width:28vw;
+        height: 4vh;
+      }  
+    }

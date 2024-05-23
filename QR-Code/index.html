@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code-generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user">
+            <label target="input">QR Code</label>
+            <input type="text" id="input" placeholder="  https:\\www.xyz......">
+        </div>
+            <div class="bt">
+            <button onclick="qrGenerate()">Generate..</button>
+        </div>    
+        <div id="qrcode"></div>    
+    </div>
+   
+    <script>
+   function qrGenerate(){
+     var url=document.querySelector('#input').value;
+     if(!url){
+    alert("Please inter the url");
+     }else{
+     var qr=document.querySelector("#qrcode");
+     var button=document.createElement('button');
+     qr.innerHTML="";
+     var qrG= new QRCode(qr,{
+        text:url,
+        height:100,
+        width:100,
+        correctLevel : QRCode.CorrectLevel.H
+     });
+     button.innerHTML="Download";
+     qr.appendChild(button);
+     button.classList.add('down');
+    }
+    var bt=document.querySelector('.down');
+    bt.addEventListener('click',function(){
+        var img=document.querySelector('#qrcode').querySelector('img').src;
+        var link=document.createElement('a');
+        link.download="qrcode.png";
+        link.href=img;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        delete link;
+        })
+   }
+    </script>
+</body>
+</html>
